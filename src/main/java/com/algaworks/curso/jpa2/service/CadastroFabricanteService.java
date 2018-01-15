@@ -22,7 +22,5 @@ public class CadastroFabricanteService implements Serializable{
 		}
 		
 		this.fabricanteDAO.salvar(fabricante);
-	}
-
-	
+	}	
 }
