@@ -29,14 +29,14 @@ public class ModeloCarroDAO implements Serializable{
 	public void excluir(ModeloCarro modeloCarro) throws NegocioException {
 		try {
 			modeloCarro = buscarPeloCodigo(modeloCarro.getCodigo());
-			manager.remove(modeloCarro);
-			manager.flush();
+			this.manager.remove(modeloCarro);
+			this.manager.flush();
 		} catch (Exception e) {
 			throw new NegocioException("Este modelo de carro não pode ser excluído!");
 		}
 	}
 	
 	public ModeloCarro buscarPeloCodigo(Long codigo) {
-		return manager.find(ModeloCarro.class, codigo);
+		return this.manager.find(ModeloCarro.class, codigo);
 	}
 }
